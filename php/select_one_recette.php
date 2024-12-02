@@ -1,3 +1,4 @@
+
 <?php
 include('./db/connexion.php');
 
@@ -10,21 +11,21 @@ $stmt->execute([':id' => $id_recette_demande]);
 $recette = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if ($recette) {
-?>
-
-<div class="recipe-container">
-    <h1 class="recipe-title"><?php echo htmlspecialchars($recette['nom']); ?></h1>
-    <p class="recipe-origin"><strong>Types:</strong> <?php echo htmlspecialchars($recette['id_types_aliments']); ?></p>
-    <p class="recipe-time"><strong>Temps de préparation:</strong> <?php echo htmlspecialchars($recette['temps_préparation']); ?> minutes</p>
-    <div class="recipe-description">
-        <h2>Description</h2>
-        <p><?php echo nl2br(htmlspecialchars($recette['id_instruction'])); ?></p>
+    ?>
+    <div class="recipe-container">
+        <h1 class="recipe-title"><?= htmlspecialchars($recette['nom_recette']) ?></h1>
+        <p class="recipe-origin"><strong>Types:</strong> <?= htmlspecialchars($recette['id_types_aliments']) ?></p>
+        <p class="recipe-time"><strong>Temps de préparation:</strong> <?= htmlspecialchars($recette['temps_preparation']) ?> minutes</p>
+        var_dump($)
+        <div class="recipe-description">
+            <h2>Description</h2>
+            <p><?= nl2br(htmlspecialchars($recette['description'])) ?></p>
+        </div>
+        <a href="recettes" class="lien_card_recette">chercher d'autres recettes</a>
     </div>
-    <a href="Recettes" class="lien_card_recette">chercher d'autres recettes</a>
-</div>
-
-<?php
+    <?php
 } else {
     echo "<p>Recette introuvable.</p>";
 }
 ?>
+

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<?php include('./includes/head.html'); ?>
+<?php include('.includes/head.html'); ?>
 
 <body>
 
-    <?php include('./includes/header.html'); ?>
+    <?php include('.includes/header.html'); ?>
 
     <main>
         <h1>Nous contacter</h1>

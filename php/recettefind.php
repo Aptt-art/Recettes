@@ -1,6 +1,7 @@
 <?php
+ include './includes/header.html'; 
 // Inclure le fichier de connexion à la base de données
-include('./db/connexion.php');
+require('./db/connexion.php');
 
 // Vérifier si une requête de recherche est soumise
 if (isset($_GET['q']) && !empty($_GET['q'])) {

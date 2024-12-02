@@ -14,10 +14,10 @@ if (isset($_GET['id'])) {
         echo "<h1>$nomRecette</h1>";
         echo "<p>" . nl2br(htmlspecialchars($data['description'])) . "</p>";
     } else {
-        include(__DIR__ . '/erreur404.php');
+        include(__DIR__ . './erreur404.php');
     }
 } else {
-    include(__DIR__ . '/erreur404.php');
+    include(__DIR__ . './erreur404.php');
 }
 
 

@@ -1,17 +1,22 @@
+
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/projets/testphp/cuisinefichierpropre/db/connexion.php';
-
-
-$query = "SELECT * FROM recettes";
-$stmt = $pdo->query($query);
-$recettes = $stmt->fetchAll();
-
 include('./includes/header.html');
-?>
+include('./db/connexion.php');
 
+try {
+    $query = "SELECT * FROM recettes";
+    $stmt = $pdo->query($query);
+    $recettes = $stmt->fetchAll();
+} catch (PDOException $e) {
+    echo 'Erreur : ' . $e->getMessage();
+    exit();
+}
+
+
+?>
 <main>
     <h1>Liste des Recettes</h1>
-    <?php if (count($recettes) > 0): ?>
+    <?php if (!empty($recettes)): ?>
         <ul>
             <?php foreach ($recettes as $recette): ?>
                 <li><a href='recettes/<?php echo $recette['id_recette']; ?>'><?php echo htmlspecialchars($recette['nom_recette']); ?></a></li>

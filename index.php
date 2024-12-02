@@ -56,6 +56,7 @@
                                 
                                 $id_recette_demande = $maRoute[1];
                                 include("./php/select_one_recette.php");
+                                include("./pages/une_recette.php");
 
                             } else {
                                 include("./pages/erreur404.php");
