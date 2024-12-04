@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
-<?php include './includes/header.html'; ?>
 <?php include('./includes/head.html'); ?>
-
 <title><?= htmlspecialchars($recette['nom_recette'] ?? 'Recette inconnue') ?></title>
+<link rel="stylesheet" href=".\css\style.css">
 </head>
-
 <body>
-    
+    <?php include './includes/header.html'; ?>
     <h1><?= htmlspecialchars($recette['nom_recette'] ?? 'Recette inconnue') ?></h1>
     <section id="instructions">
         <h2>Instructions</h2>
@@ -28,3 +26,4 @@
     <?php include './includes/footer.html'; ?>
 </body>
 </html>
+  

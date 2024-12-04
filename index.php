@@ -6,7 +6,15 @@
     // 1. On récupère la route (variable $_GET["route"]) dans l'URL
     // et on récupère chaque morceau (séparés par un '/') dans un tableau
     // afin de faciliter le traitement du routage dans l'étape 2.
-    $maRoute = explode('/', $_GET["route"]);
+    // $maRoute = explode('/', $_GET["route"]);
+    $maRoute = isset($_GET["route"]) ? explode('/', $_GET["route"]) : [];
+
+if (!empty($_GET['q'])) {
+    // Appeler la logique de recherche
+    include './pages/search_recipe.php';
+    exit;
+}
+
     
     
     // 2. En fonction de la valeur de la première partie de la route (si elle existe),

@@ -1,13 +1,30 @@
-<header>
-    <nav class="navbar">
-        <div class="logo">
-            <a href="accueil"><img src="../assets/logo.png" alt="Logo"></a>
-        </div>
-        <ul class="nav-links">
-            <li><a href="./accueil">Accueil</a></li>
-            <li><a href="./recettes">Recettes</a></li>
-            <li><a href="./contact">Contact</a></li>
-        </ul>
-       
+<header class="navbar">
+    <div class="logo">
+        <a href="/">Logo</a> <!-- Remplacer par le logo de votre site -->
+    </div>
+
+    <div class="burger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="menu">
+        <a href="accueil">Accueil</a>
+        <a href="recettes">Recettes</a>
+        <a href="categories">Catégories</a>
+        <a href="contact">Contact</a>
+    </div>
+
+    <div class="categories">
+        <a href="/categories/vegan">Vegan</a>
+        <a href="/categories/omnivore">Omnivore</a>
+        <a href="/categories/vegetarien">Végétarien</a>
+    </div>
 </header>
 
+<script>
+    function toggleMenu() {
+        document.querySelector('.navbar').classList.toggle('active');
+    }
+</script>
