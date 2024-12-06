@@ -1,6 +1,6 @@
 <header class="navbar">
     <div class="logo">
-        <a href="/">Logo</a> <!-- Remplacer par le logo de votre site -->
+        <a href="#">Logo</a> <!-- Remplacer par le logo de votre site -->
     </div>
 
     <div class="burger" onclick="toggleMenu()">
@@ -12,19 +12,44 @@
     <div class="menu">
         <a href="accueil">Accueil</a>
         <a href="recettes">Recettes</a>
-        <a href="categories">Catégories</a>
+        <a href="categories" onclick="toggleCategories(event)">Catégories</a>
         <a href="contact">Contact</a>
-    </div>
 
-    <div class="categories">
-        <a href="/categories/vegan">Vegan</a>
-        <a href="/categories/omnivore">Omnivore</a>
-        <a href="/categories/vegetarien">Végétarien</a>
+        <!-- Sous-catégories qui seront affichées dynamiquement -->
+        <div class="categories hidden">
+            <a href="/categories/vegan">Vegan</a>
+            <a href="/categories/omnivore">Omnivore</a>
+            <a href="/categories/vegetarien">Végétarien</a>
+        </div>
     </div>
 </header>
+
+<style>
+    .hidden {
+        display: none;
+    }
+
+    .menu .categories {
+        margin-left: 20px;
+    }
+
+    .navbar.active .menu {
+        display: block;
+    }
+
+    .burger {
+        cursor: pointer;
+    }
+</style>
 
 <script>
     function toggleMenu() {
         document.querySelector('.navbar').classList.toggle('active');
+    }
+
+    function toggleCategories(event) {
+        event.preventDefault(); // Empêche la redirection
+        const categories = document.querySelector('.menu .categories');
+        categories.classList.toggle('hidden');
     }
 </script>
