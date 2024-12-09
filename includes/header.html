@@ -1,7 +1,9 @@
 <header class="navbar">
     <div class="logo">
-        <a href="#">Logo</a> <!-- Remplacer par le logo de votre site -->
-    </div>
+        <a href="index.php"> <!-- Lien vers la page d'accueil -->
+            <img src="./assets/logoMarmifion.webp" alt="Logo Marmifion" class="logo-img"> <!-- Affichage de l'image -->
+            <script src="./js/script.js"></script>
+        </a>
 
     <div class="burger" onclick="toggleMenu()">
         <div></div>
@@ -24,23 +26,6 @@
     </div>
 </header>
 
-<style>
-    .hidden {
-        display: none;
-    }
-
-    .menu .categories {
-        margin-left: 20px;
-    }
-
-    .navbar.active .menu {
-        display: block;
-    }
-
-    .burger {
-        cursor: pointer;
-    }
-</style>
 
 <script>
     function toggleMenu() {

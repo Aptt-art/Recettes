@@ -2,14 +2,14 @@
 
 // Récupérer le numéro de la page
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-$limit = 22; // Nombre de recettes par page
+$limit = 24; // Nombre de recettes par page
 $offset = ($page - 1) * $limit;
 
 $query = "
     SELECT 
         r.id_recette, 
         r.nom_recette,
-        GROUP_CONCAT(i.nom ORDER BY i.nom SEPARATOR ', ') AS ingredients,
+        GROUP_CONCAT(i.nom_ingredients ORDER BY i.nom_ingredients SEPARATOR ', ') AS ingredients,
         p.chemin AS image_url
     FROM recettes r
     LEFT JOIN ingredients_recettes ir ON r.id_recette = ir.id_recette

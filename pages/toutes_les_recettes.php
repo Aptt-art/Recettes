@@ -33,7 +33,7 @@
             <?php foreach ($recettes as $recette): ?>
                 <div class="recipe-card">
                     
-                    <a href="<?php echo $recette['id_recette']; ?>">
+                    <a href="recettes/<?php echo $recette['id_recette']; ?>">
                         <h2><?php echo htmlspecialchars($recette['nom_recette']); ?></h2>
 
                         <?php if ($recette['image_url']): ?>
@@ -51,6 +51,25 @@
         <p>Aucune recette disponible pour cette catégorie.</p>
     <?php endif; ?>
 </main>
+<script>
+    // Sélection du formulaire et de l'input
+    const searchForm = document.getElementById('searchForm');
+    const searchInput = document.getElementById('searchInput');
+
+    searchForm.addEventListener('submit', function (e) {
+        e.preventDefault(); // Empêche le rechargement de la page par défaut
+
+        const searchQuery = searchInput.value.trim(); // Récupère la valeur de l'input
+        if (searchQuery === '') {
+            alert('Veuillez entrer une recette à rechercher.');
+            return;
+        }
+
+        // Redirige vers la page de sélection avec le paramètre de recherche
+        window.location.href = `./php/select_one_recette.php?search=${encodeURIComponent(searchQuery)}`;
+    });
+</script>
+
 
 <?php include('./includes/footer.html'); ?>
 </body>

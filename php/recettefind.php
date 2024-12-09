@@ -8,7 +8,7 @@ if (isset($_GET['q']) && !empty($_GET['q'])) {
     $searchTerm = htmlspecialchars($_GET['q']); // Sécuriser la saisie utilisateur
 
     // Requête SQL pour rechercher des recettes
-    $query = "SELECT * FROM recettes WHERE titre LIKE :searchTerm OR description LIKE :searchTerm";
+    $query = "SELECT * FROM recettes WHERE nom LIKE :searchTerm OR description LIKE :searchTerm";
     $stmt = $pdo->prepare($query);
     $stmt->execute(['searchTerm' => '%' . $searchTerm . '%']);
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);

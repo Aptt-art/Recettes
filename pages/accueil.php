@@ -7,9 +7,7 @@
 </head>
 
 <body>
-
-
-    <?php include('./includes/header.html'); ?>
+<?php include('./includes/header.html'); ?>
     <form class="search-bar" id="searchForm" action="index.php" method="get">
             <input type="text" id="searchInput" name="search" placeholder="Rechercher une recette...">
             <button type="submit">Rechercher</button>
@@ -27,7 +25,7 @@
     <?php include('./includes/footer.html'); ?>
 
     <!-- Inclusion du script JavaScript externe -->
-    <script src="../js/script.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
