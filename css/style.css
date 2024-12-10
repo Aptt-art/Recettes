@@ -130,6 +130,8 @@ main {
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
+    text-decoration: none;
+    color: #555;
 }
 
 .recipe-card img {

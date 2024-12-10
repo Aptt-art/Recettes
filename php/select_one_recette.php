@@ -13,7 +13,12 @@ $query = "
         r.nom_recette, c.nom, 
         GROUP_CONCAT(DISTINCT i.nom_ingredients ORDER BY i.nom_ingredients SEPARATOR ', ') AS ingredients,
         GROUP_CONCAT(DISTINCT t.nom_aliment ORDER BY t.nom_aliment SEPARATOR ', ') AS types_aliments,
-        p.chemin AS image_url
+        p.chemin AS image_url,
+        (
+            SELECT GROUP_CONCAT(CONCAT(ordre, '. ', description) ORDER BY ordre ASC SEPARATOR '\n') 
+            FROM instructions 
+            WHERE instructions.id_recette = r.id_recette
+        ) AS instructions
     FROM recettes r
     LEFT JOIN ingredients_recettes ir ON r.id_recette = ir.id_recette
     LEFT JOIN ingredients i ON ir.id_ingredient = i.id_ingredient
@@ -39,5 +44,3 @@ try {
     exit;
 }
 ?>
-
-
