@@ -66,7 +66,7 @@
         }
 
         // Redirige vers la page de sélection avec le paramètre de recherche
-        window.location.href = `./php/select_one_recette.php?search=${encodeURIComponent(searchQuery)}`;
+       
     });
 </script>
 

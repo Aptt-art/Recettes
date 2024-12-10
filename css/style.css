@@ -12,22 +12,94 @@
     text-align: center;
 }
 
+/* =============================
+   NAVBAR STYLING
+   ============================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #a18cd1cc;
+    padding: 10px 30px;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
+.navbar .logo img {
+    max-height: 50px;
+    width: auto;
+}
+
+.navbar .menu {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .menu a:hover {
+    background-color: #00f2fe;
+    padding: 10px;
+    border-radius: 5px;
+}
 
 /* =============================
    BURGER MENU
    ============================= */
-.navbar .burger {
+.burger {
     display: none;
     cursor: pointer;
 }
 
-.navbar .burger div {
+.burger div {
     width: 25px;
     height: 3px;
     background-color: #fff;
     margin: 5px;
     transition: transform 0.3s ease;
+}
+
+/* =============================
+   DROPDOWN MENU
+   ============================= */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #a18cd1cc;
+    display: none;
+    flex-direction: column;
+    min-width: 150px;
+    border: 1px solid #555;
+    z-index: 1000;
+}
+
+.dropdown-content a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #00f2fe;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
 }
 
 /* =============================
@@ -48,22 +120,16 @@ main {
     padding: 20px;
 }
 
-/* =============================
-   RECIPE CARD
-   ============================= */
 .recipe-card {
     background: rgba(255, 255, 255, 0.9);
     padding: 25px;
     border-radius: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    aspect-ratio: auto;
+    text-align: center;
 }
 
 .recipe-card img {
@@ -84,22 +150,26 @@ main {
    ============================= */
 .lien_card_recette {
     display: inline-block;
-    margin-top: auto;
+    margin-top: 20px;
     padding: 10px 20px;
-    background-color: #ff6b6b;
+    background: linear-gradientlinear-gradient(135deg, #4facfe, #00f2fe, #a18cd1, #fbc2eb);
+    color: #333;
     color: white;
     text-decoration: none;
-    border-radius: 8px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
 .lien_card_recette:hover {
-    background-color: #ff8566;
+    background: linear-gradient(90deg, #ff8566, #ff6b6b);
+    transform: scale(1.05);
 }
 
 /* =============================
-   SEARCH BAR AND BUTTON (LOUPE)
+   SEARCH BAR
    ============================= */
 #searchForm {
     display: flex;
@@ -115,7 +185,7 @@ main {
     border: 2px solid #2b2d42;
     width: 300px;
     font-size: 1.1rem;
-    transition: width 0.3s ease;
+    transition: width 0.3s ease, border-color 0.3s ease;
 }
 
 #searchInput:focus {
@@ -124,7 +194,6 @@ main {
     border-color: #00f2fe;
 }
 
-/* Bouton rond avec icône loupe */
 #searchButton {
     background-color: #00f2fe;
     border: none;
@@ -193,34 +262,7 @@ footer a:hover {
 }
 
 /* =============================
-   FONTS
-   ============================= */
-.dancing-script {
-    font-family: "Dancing Script", cursive;
-    font-weight: 1000;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-size: 4rem;
-}
-
-/* Page select_one_recette */
-
-/* =============================
-   GLOBAL STYLES
-   ============================= */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #4facfe, #00f2fe, #a18cd1, #fbc2eb);
-    color: #333;
-    line-height: 1.6;
-    min-height: 100vh;
-    text-align: center;
-}
-
-/* =============================
-   CONTAINER STYLING
+   RECIPE PAGE STYLING
    ============================= */
 .recette-container {
     max-width: 800px;
@@ -232,9 +274,6 @@ body {
     text-align: left;
 }
 
-/* =============================
-   HEADING
-   ============================= */
 .recette-container h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
@@ -242,21 +281,6 @@ body {
     text-align: center;
 }
 
-/* =============================
-   IMAGE STYLING
-   ============================= */
-.recette-image img {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin: 0 auto 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* =============================
-   SECTION TITLES
-   ============================= */
 .recette-container h2 {
     font-size: 1.8rem;
     margin: 20px 0 10px;
@@ -266,19 +290,21 @@ body {
     padding-bottom: 5px;
 }
 
-/* =============================
-   TEXT CONTENT
-   ============================= */
 .recette-container p {
     font-size: 1.1rem;
-    color: #333;
     line-height: 1.8;
     margin: 10px 0;
 }
 
-/* =============================
-   INGREDIENTS LIST
-   ============================= */
+.recette-image img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
 .ingredients p,
 .categorie p {
     background: #4facfe;
@@ -287,106 +313,3 @@ body {
     padding: 10px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
-
-/* =============================
-   BUTTONS
-   ============================= */
-.lien_card_recette {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: linear-gradient(90deg, #ff6b6b, #ff8566);
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 10px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-}
-
-.lien_card_recette:hover {
-    background: linear-gradient(90deg, #ff8566, #ff6b6b);
-    transform: scale(1.05);
-}
-/* =============================
-   NAVBAR STYLING
-   ============================= */
-   .navbar {
-    background-color: #4facfecc;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #fff;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-/* Logo aligné à gauche */
-.navbar .logo {
-    display: flex;
-    align-items: center;
-}
-
-.navbar .logo img {
-    max-height: 50px; /* Ajustez la hauteur du logo */
-    width: auto; /* Garde la proportion de l'image */
-}
-
-/* Menu principal aligné à droite */
-.navbar .menu {
-    display: flex;
-    align-items: center;
-}
-
-.navbar .menu a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2rem;
-    margin: 0 15px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.navbar .menu a:hover {
-    background-color: #00f2fe;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-/* Catégories : le sous-menu est caché par défaut */
-.categories {
-    position: relative;
-}
-
-.categories .categories-submenu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #2b2d42;
-    display: none;
-    flex-direction: column;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.categories .categories-submenu a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
-    padding: 10px;
-    margin: 5px 0;
-    transition: background-color 0.3s ease;
-}
-
-.categories .categories-submenu a:hover {
-    background-color: #00f2fe;
-}
-
-/* Affichage du sous-menu sur hover */
-.categories:hover .categories-submenu {
-    display: flex;
-}
-

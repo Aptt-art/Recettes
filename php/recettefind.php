@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
  include './includes/header.html'; 
 // Inclure le fichier de connexion à la base de données
 require('./db/connexion.php');
@@ -20,4 +20,4 @@ if (isset($_GET['q']) && !empty($_GET['q'])) {
     // Si aucune recherche n'est soumise, renvoyer une réponse vide
     echo json_encode([]);
 }
-?>
+?> -->

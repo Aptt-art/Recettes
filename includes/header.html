@@ -1,40 +1,26 @@
 <header class="navbar">
     <div class="logo">
-        <a href="index.php"> <!-- Lien vers la page d'accueil -->
+        <a href="accueil"> <!-- Lien vers la page d'accueil -->
             <img src="./assets/logoMarmifion.webp" alt="Logo Marmifion" class="logo-img"> <!-- Affichage de l'image -->
-            <script src="./js/script.js"></script>
         </a>
-
-    <div class="burger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
     </div>
+
 
     <div class="menu">
         <a href="accueil">Accueil</a>
         <a href="recettes">Recettes</a>
-        <a href="categories" onclick="toggleCategories(event)">Catégories</a>
-        <a href="contact">Contact</a>
-
-        <!-- Sous-catégories qui seront affichées dynamiquement -->
-        <div class="categories hidden">
-            <a href="/categories/vegan">Vegan</a>
-            <a href="/categories/omnivore">Omnivore</a>
-            <a href="/categories/vegetarien">Végétarien</a>
+        
+        <!-- Dropdown pour les Catégories -->
+        <div class="dropdown">
+            <a href="#" onclick="toggleDropdown(event)">Catégories &#9662;</a> <!-- Menu principal -->
+            <div class="dropdown-content hidden" id="categoriesDropdown">
+                <a href="categories/vegan">Vegan</a>
+                <a href="categories/vegetarien">Végétarien</a>
+                <a href="categories/omnivore">Omnivore</a>
+            </div>
         </div>
+        
+        <a href="contact">Contact</a>
     </div>
 </header>
 
-
-<script>
-    function toggleMenu() {
-        document.querySelector('.navbar').classList.toggle('active');
-    }
-
-    function toggleCategories(event) {
-        event.preventDefault(); // Empêche la redirection
-        const categories = document.querySelector('.menu .categories');
-        categories.classList.toggle('hidden');
-    }
-</script>
